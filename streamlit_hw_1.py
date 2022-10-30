@@ -106,4 +106,4 @@ bar = alt.Chart(source).mark_bar(color='#03cffc').encode(
     alt.Y('count()',title="Records")
 )
 
-bar
+st.altair_chart(bar, use_container_width=True)
