@@ -1,4 +1,3 @@
-from turtle import title
 import streamlit as st
 import random
 import altair as alt
@@ -99,7 +98,9 @@ The 2 changes I made were:
 """
 )
 
-source = data.movies.url
+source = pd.read_json('imdb.json')
+
+st.write(source)
 
 bar = alt.Chart(source).mark_bar(color='#03cffc').encode(
     alt.X("IMDB_Rating:Q", bin=True,title = "IMDB Rating"),
